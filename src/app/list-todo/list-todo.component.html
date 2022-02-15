@@ -1,0 +1,25 @@
+<h1>My Todo's</h1>
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Description</th>
+        <th>Target Date</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <!-- loops aroound todo -->
+      <tr *ngFor="let todo of todos">
+
+        <td>{{todo.description}}</td>
+        <!-- show date without greenwich meridian time -->
+        <td>{{todo.targetDate | date | uppercase}}</td>
+        <td>{{todo.Done}}</td>
+
+      </tr>
+
+    </tbody>
+  </table>
+</div>
