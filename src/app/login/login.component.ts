@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { HardcodedAuthenticationService } from '../service/hardcoded-authentication.service';
 
 @Component({
   selector: 'app-login',
@@ -7,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  username = 'sandy';
+  username = 'mabel';
   password = '';
   errorMessage = 'Invalid Credentials';
   invalidLogin = false
@@ -15,13 +16,17 @@ export class LoginComponent implements OnInit {
   // Router
   //Dependency Injection
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+    private hardcodedAuthenticationService: HardcodedAuthenticationService) { }
 
+  // eslint-disable-next-line @angular-eslint/no-empty-lifecycle-method
   ngOnInit(): void {
+
+
   }
 
   handleLogin(){
-    if(this.username === "sandy" && this.password === "dummy"){
+    if(this.hardcodedAuthenticationService.authenticate(this.username,this.password)){
 
       // Redirect to welcome page
       this.router.navigate(['welcome',this.username])

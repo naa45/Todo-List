@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HardcodedAuthenticationService } from '../service/hardcoded-authentication.service';
 
 @Component({
   selector: 'app-menu',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
+  // isUserLoggedIn: boolean = false;
 
-  constructor() { }
+  constructor(public hardcodedAthenticationService: HardcodedAuthenticationService ) { }
 
-  ngOnInit(): void {
+// eslint-disable-next-line @angular-eslint/no-empty-lifecycle-method
+ngOnInit(): void {
+  // this.isUserLoggedIn = this.hardcodedAthenticationService.isUserLoggedIn();
   }
 
 }
+
+
