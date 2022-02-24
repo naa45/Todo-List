@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { ErrorComponent } from './error/error.component';
 import { ListTodoComponent } from './list-todo/list-todo.component';
 import { MenuComponent } from './menu/menu.component';
+import { LogoutComponent } from './logout/logout.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { MenuComponent } from './menu/menu.component';
     ErrorComponent,
     ListTodoComponent,
     MenuComponent,
+    LogoutComponent,
 
   ],
   imports: [

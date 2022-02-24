@@ -6,17 +6,20 @@ import { ErrorComponent } from './error/error.component';
 import { ListTodoComponent } from './list-todo/list-todo.component';
 import { MenuComponent } from './menu/menu.component';
 import { FootageComponent } from './footage/footage.component';
+import { LogoutComponent } from './logout/logout.component';
+import { RouteGuardService } from './service/route-guard.service';
 
 const routes: Routes = [
-  { path: '', component: LoginComponent, },
+  { path: '', component: LoginComponent, },//canActivate, RouteGuardService
   { path: 'login', component: LoginComponent },
-  { path: 'welcome/:name', component:WelcomeComponent },
-  { path: 'todos', component:ListTodoComponent },
-  { path: 'menu', component:MenuComponent },
-  { path: 'footer', component:FootageComponent },
+  { path: 'welcome/:name', component:WelcomeComponent, canActivate:[RouteGuardService] },
+  { path: 'todos', component:ListTodoComponent, canActivate:[RouteGuardService]},
+  { path: 'menu', component:MenuComponent, canActivate:[RouteGuardService] },
+  { path: 'footer', component:FootageComponent, canActivate:[RouteGuardService] },
+  { path: 'logout', component:LogoutComponent, canActivate:[RouteGuardService] },
 
 
-  {path: '**', component:ErrorComponent}
+  { path: '**', component:ErrorComponent }
 
 
 ];

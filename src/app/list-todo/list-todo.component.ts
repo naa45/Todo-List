@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 // a class to represent todo stucture
 export class Todo{
   constructor(
@@ -15,7 +15,7 @@ export class Todo{
   templateUrl: './list-todo.component.html',
   styleUrls: ['./list-todo.component.css']
 })
-export class ListTodoComponent implements OnInit {
+export class ListTodoComponent  {
 
   todos = [
     new Todo(1,'Learn to dance',false, new Date()),
@@ -26,7 +26,6 @@ export class ListTodoComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  
 
 }
